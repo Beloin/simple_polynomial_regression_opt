@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="simple_polynomial_regression_opt"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="simple_polynomial_regression_opt">
+				<Option output="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/simple_polynomial_regression_opt" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 simple_polynomial_regression_opt"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="simple_polynomial_regression_opt/fast">
+				<Option output="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/simple_polynomial_regression_opt" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/../../../../include/c++/11.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 simple_polynomial_regression_opt/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/gauss_method.cpp">
+			<Option target="simple_polynomial_regression_opt"/>
+		</Unit>
+		<Unit filename="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/main.cpp">
+			<Option target="simple_polynomial_regression_opt"/>
+		</Unit>
+		<Unit filename="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/polynomial_regression.cpp">
+			<Option target="simple_polynomial_regression_opt"/>
+		</Unit>
+		<Unit filename="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/utils.cpp">
+			<Option target="simple_polynomial_regression_opt"/>
+		</Unit>
+		<Unit filename="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

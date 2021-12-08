@@ -1,0 +1,3 @@
+/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles/simple_polynomial_regression_opt.dir
