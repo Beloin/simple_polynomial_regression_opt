@@ -3,4 +3,4 @@ project(simple_polynomial_regression_opt)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(simple_polynomial_regression_opt main.cpp polynomial_regression.cpp gauss_method.cpp utils.cpp)
+add_executable(simple_polynomial_regression_opt main.cpp)

@@ -79,62 +79,17 @@ CMakeFiles/simple_polynomial_regression_opt.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_polynomial_regression_opt.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/main.cpp -o CMakeFiles/simple_polynomial_regression_opt.dir/main.cpp.s
 
-CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.o: CMakeFiles/simple_polynomial_regression_opt.dir/flags.make
-CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.o: ../polynomial_regression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.o -c /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/polynomial_regression.cpp
-
-CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/polynomial_regression.cpp > CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.i
-
-CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/polynomial_regression.cpp -o CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.s
-
-CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.o: CMakeFiles/simple_polynomial_regression_opt.dir/flags.make
-CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.o: ../gauss_method.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.o -c /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/gauss_method.cpp
-
-CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/gauss_method.cpp > CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.i
-
-CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/gauss_method.cpp -o CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.s
-
-CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.o: CMakeFiles/simple_polynomial_regression_opt.dir/flags.make
-CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.o: ../utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.o -c /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/utils.cpp
-
-CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/utils.cpp > CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.i
-
-CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/utils.cpp -o CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.s
-
 # Object files for target simple_polynomial_regression_opt
 simple_polynomial_regression_opt_OBJECTS = \
-"CMakeFiles/simple_polynomial_regression_opt.dir/main.cpp.o" \
-"CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.o" \
-"CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.o" \
-"CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.o"
+"CMakeFiles/simple_polynomial_regression_opt.dir/main.cpp.o"
 
 # External object files for target simple_polynomial_regression_opt
 simple_polynomial_regression_opt_EXTERNAL_OBJECTS =
 
 simple_polynomial_regression_opt: CMakeFiles/simple_polynomial_regression_opt.dir/main.cpp.o
-simple_polynomial_regression_opt: CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.o
-simple_polynomial_regression_opt: CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.o
-simple_polynomial_regression_opt: CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.o
 simple_polynomial_regression_opt: CMakeFiles/simple_polynomial_regression_opt.dir/build.make
 simple_polynomial_regression_opt: CMakeFiles/simple_polynomial_regression_opt.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable simple_polynomial_regression_opt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable simple_polynomial_regression_opt"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simple_polynomial_regression_opt.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

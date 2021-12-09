@@ -129,30 +129,6 @@ simple_polynomial_regression_opt/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/build
 .PHONY : simple_polynomial_regression_opt/fast
 
-gauss_method.o: gauss_method.cpp.o
-.PHONY : gauss_method.o
-
-# target to build an object file
-gauss_method.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.o
-.PHONY : gauss_method.cpp.o
-
-gauss_method.i: gauss_method.cpp.i
-.PHONY : gauss_method.i
-
-# target to preprocess a source file
-gauss_method.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.i
-.PHONY : gauss_method.cpp.i
-
-gauss_method.s: gauss_method.cpp.s
-.PHONY : gauss_method.s
-
-# target to generate assembly for a file
-gauss_method.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.s
-.PHONY : gauss_method.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -177,54 +153,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-polynomial_regression.o: polynomial_regression.cpp.o
-.PHONY : polynomial_regression.o
-
-# target to build an object file
-polynomial_regression.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.o
-.PHONY : polynomial_regression.cpp.o
-
-polynomial_regression.i: polynomial_regression.cpp.i
-.PHONY : polynomial_regression.i
-
-# target to preprocess a source file
-polynomial_regression.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.i
-.PHONY : polynomial_regression.cpp.i
-
-polynomial_regression.s: polynomial_regression.cpp.s
-.PHONY : polynomial_regression.s
-
-# target to generate assembly for a file
-polynomial_regression.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.s
-.PHONY : polynomial_regression.cpp.s
-
-utils.o: utils.cpp.o
-.PHONY : utils.o
-
-# target to build an object file
-utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.o
-.PHONY : utils.cpp.o
-
-utils.i: utils.cpp.i
-.PHONY : utils.i
-
-# target to preprocess a source file
-utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.i
-.PHONY : utils.cpp.i
-
-utils.s: utils.cpp.s
-.PHONY : utils.s
-
-# target to generate assembly for a file
-utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.s
-.PHONY : utils.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -234,18 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... simple_polynomial_regression_opt"
-	@echo "... gauss_method.o"
-	@echo "... gauss_method.i"
-	@echo "... gauss_method.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... polynomial_regression.o"
-	@echo "... polynomial_regression.i"
-	@echo "... polynomial_regression.s"
-	@echo "... utils.o"
-	@echo "... utils.i"
-	@echo "... utils.s"
 .PHONY : help
 
 

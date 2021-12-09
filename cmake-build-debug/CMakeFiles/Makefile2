@@ -81,12 +81,12 @@ clean: CMakeFiles/simple_polynomial_regression_opt.dir/clean
 CMakeFiles/simple_polynomial_regression_opt.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_polynomial_regression_opt.dir/build.make CMakeFiles/simple_polynomial_regression_opt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target simple_polynomial_regression_opt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target simple_polynomial_regression_opt"
 .PHONY : CMakeFiles/simple_polynomial_regression_opt.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/simple_polynomial_regression_opt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/simple_polynomial_regression_opt.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/simple_polynomial_regression_opt.dir/rule

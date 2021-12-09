@@ -82,16 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/gauss_method.cpp">
-			<Option target="simple_polynomial_regression_opt"/>
-		</Unit>
 		<Unit filename="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/main.cpp">
-			<Option target="simple_polynomial_regression_opt"/>
-		</Unit>
-		<Unit filename="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/polynomial_regression.cpp">
-			<Option target="simple_polynomial_regression_opt"/>
-		</Unit>
-		<Unit filename="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/utils.cpp">
 			<Option target="simple_polynomial_regression_opt"/>
 		</Unit>
 		<Unit filename="/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/CMakeLists.txt">

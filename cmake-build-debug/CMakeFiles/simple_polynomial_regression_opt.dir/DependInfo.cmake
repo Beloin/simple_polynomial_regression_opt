@@ -8,10 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/gauss_method.cpp" "/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles/simple_polynomial_regression_opt.dir/gauss_method.cpp.o"
   "/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/main.cpp" "/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles/simple_polynomial_regression_opt.dir/main.cpp.o"
-  "/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/polynomial_regression.cpp" "/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles/simple_polynomial_regression_opt.dir/polynomial_regression.cpp.o"
-  "/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/utils.cpp" "/home/beloin/Documents/aulas/6_sem/semb/simple_polynomial_regression_opt/cmake-build-debug/CMakeFiles/simple_polynomial_regression_opt.dir/utils.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
