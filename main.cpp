@@ -140,6 +140,12 @@ int size = 10;
 int degree = 2;
 float value[10][2];
 
+/**
+ * Tente colocar um buffer gloabl que pode ser reutilziado por todas as funções que usam buffers locais
+ * x y etc
+ * @return
+ */
+
 int main() {
     value[0][0] = 5.771746026235907;
     value[0][1] = 2756.999505988017;
