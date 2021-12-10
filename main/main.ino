@@ -7,19 +7,6 @@
  * @return
  */
 float elevate_by(float num, int by);
-/**
- * Print an array.
- * @param arr
- * @param arr_size
- */
-void print_arr(float *arr, int arr_size);
-/**
- * Print matrix.
- * @param i
- * @param j
- * @param arr
- */
-void print_matrix(int i, int j, int width, float *arr);
 
 /**
  * Gets item from flattened matrix by given `i` and `j`.
@@ -134,7 +121,10 @@ void convert_triangle(int n, float *mx);
 void back_subs(int n, float *mx, float *buffer);
 
 int size = 10;
+int degree = 2;
 float value[10][2];
+float to_pred = 5.7;
+float coef[10];
 
 void setup(){
   Serial.begin(9600); // abre a porta serial a 9600 bps;
@@ -163,9 +153,8 @@ void setup(){
 
 
 void loop() {
-    float coef[10];
-    find_coefficients(size, &value[0][0], 2, coef);
-    float prediction = predict(size, coef, 5.7);
+    find_coefficients(size, &value[0][0], degree, coef);
+    float prediction = predict(size, coef, to_pred);
 
     Serial.print("\n");
     Serial.print("Value is: ");
@@ -185,31 +174,6 @@ float elevate_by(float num, int by){
         res = res * num;
     }
     return res;
-}
-
-void print_arr(float *arr, int arr_size){
-    printf("{ ");
-    for (int i = 0; i < arr_size; ++i) {
-        if (i ==0) printf("%.2f", arr[i]);
-        else printf(", %.2f", arr[i]);
-    }
-    printf(" }");
-}
-
-void print_matrix(int i, int j, int width, float *arr){
-    printf("{ \n");
-    for (int k=0; k < i; k++){
-        printf("  ");
-        printf("{ ");
-        for (int u = 0; u < j; ++u) {
-            if (u ==0) printf("%.2f", get_from_flattened_matrix(k, u, width, arr));
-            else printf(", %.2f", get_from_flattened_matrix(k,u, width, arr));
-        }
-        printf(" }");
-        if (k < i-1) printf(",\n");
-    }
-    printf("\n");
-    printf("}");
 }
 
 float get_from_flattened_matrix(int i, int j, int width, float *mx){

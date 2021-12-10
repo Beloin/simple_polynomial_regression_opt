@@ -47,8 +47,9 @@ void set_item_flattened_matrix(int i, int j, int width, float *mx, float value);
 /**
  * Use this function to find coefficients for the X -> Y polynomial regression.
  * @param mx Matrix ixj, being i>0 and j=2
- *
- * @param buffer
+ * @param degree
+ * @param buffer Needs to be degree+1 size
+ * @param arr_size
  */
 void find_coefficients(int arr_size, float *mx, int degree, float *buffer);
 /**
@@ -118,9 +119,9 @@ void gauss_method_unique_mx(int n, float *mx, float *inject);
  * @param n
  * @param mx_a
  * @param mx_b
- * @param inject_mx
+ * @param buffer
  */
-void join_mx(int n, float *mx_a, float *mx_b, float *inject_mx);
+void join_mx(int n, float *mx_a, float *mx_b, float *buffer);
 /**
  * Transforms matrix into Triangle format.
  * @param n
@@ -135,9 +136,11 @@ void convert_triangle(int n, float *mx);
  */
 void back_subs(int n, float *mx, float *buffer);
 
+int size = 10;
+int degree = 2;
+float value[10][2];
+
 int main() {
-    int size = 10;
-    float value[10][2];
     value[0][0] = 5.771746026235907;
     value[0][1] = 2756.999505988017;
     value[1][0] = 1.4909464996379098;
@@ -159,15 +162,16 @@ int main() {
     value[9][0] = 9.383340381276938;
     value[9][1] = 6742.058579154288;
 
-    std::cout << "Lol";
-
-    float coef[10];
-    find_coefficients(size, &value[0][0], 2, coef);
-    float prediction = predict(size, coef, 5.7);
-
-    std::cout << "Lol";
+    std::cout << "Running Code\n";
+    std::cout << "Value to Predict: ";
+    std::cout << 5.7;
     std::cout << "\n";
-    std::cout << "Value is: ";
+
+    float coef[degree+1];
+    find_coefficients(size, &value[0][0], degree, coef);
+    float prediction = predict(size, &coef[0], 5.7);
+
+    std::cout << "Predicted value are: ";
     std::cout << prediction;
 
     return 0;
@@ -219,7 +223,7 @@ void set_item_flattened_matrix(int i, int j, int width, float *mx, float value){
     mx[res] = value;
 }
 
-// Utils
+// Polynomial Prediction
 
 void find_coefficients(int arr_size, float *mx, int degree, float *buffer) {
     float *x, *y, res[2][arr_size];
@@ -304,13 +308,13 @@ void gauss_method(int arr_size, float *a, float *b, float *buffer){
     gauss_method_unique_mx(arr_size, &mx[0][0], buffer);
 }
 
-void join_mx(int n, float *mx_a, float *mx_b, float *inject_mx){
+void join_mx(int n, float *mx_a, float *mx_b, float *buffer){
     for (int i = 0; i < n; i++) {
         for (int ii = 0; ii < n+1; ii++) {
             if (ii == n)
-                set_item_flattened_matrix(i, ii, n+1, inject_mx, get_from_flattened_matrix(i, 0, 1, mx_b));
+                set_item_flattened_matrix(i, ii, n+1, buffer, get_from_flattened_matrix(i, 0, 1, mx_b));
             else
-                set_item_flattened_matrix(i, ii, n+1, inject_mx, get_from_flattened_matrix(i, ii, n, mx_a));
+                set_item_flattened_matrix(i, ii, n+1, buffer, get_from_flattened_matrix(i, ii, n, mx_a));
         }
     }
 }
