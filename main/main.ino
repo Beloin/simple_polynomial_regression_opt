@@ -153,12 +153,21 @@ void setup(){
 
 
 void loop() {
+    unsigned long StartTime = millis();
     find_coefficients(size, &value[0][0], degree, coef);
     float prediction = predict(size, coef, to_pred);
+
+    unsigned long CurrentTime = millis();
+    unsigned long ElapsedTime = CurrentTime - StartTime;
 
     Serial.print("\n");
     Serial.print("Value is: ");
     Serial.print(prediction);
+
+    Serial.print("\n")
+    Serial.print("Time elapsed from function: ");
+    Serial.print(ElapsedTime);
+
 
     Serial.print("           \n");
     Serial.print("           \n");
