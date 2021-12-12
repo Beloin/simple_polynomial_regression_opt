@@ -148,12 +148,6 @@ float x_result[3][3], y_result[1][3];
 // length == degree + 1
 float coef[3];
 
-/**
- * Tente colocar um buffer gloabl que pode ser reutilziado por todas as funções que usam buffers locais
- * x y etc
- * @return
- */
-
 int main() {
     value[0][0] = 5.771746026235907;
     value[0][1] = 2756.999505988017;
