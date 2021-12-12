@@ -144,7 +144,7 @@ float to_predict =  5.7;
 // length == size
 float value[250][2];
 // length == size
-float global_buffer[250][250];
+float global_buffer[2][250];
 // length == degree + 1
 float x_result[3][3], y_result[1][3];
 // length == degree + 1
