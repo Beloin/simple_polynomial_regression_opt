@@ -1,3 +1,5 @@
+#include <iostream>
+
 // Utils
 
 /**
@@ -7,6 +9,19 @@
  * @return
  */
 float elevate_by(float num, int by);
+/**
+ * Print an array.
+ * @param arr
+ * @param arr_size
+ */
+void print_arr(float *arr, int arr_size);
+/**
+ * Print matrix.
+ * @param i
+ * @param j
+ * @param arr
+ */
+void print_matrix(int i, int j, int width, float *arr);
 
 /**
  * Gets item from flattened matrix by given `i` and `j`.
@@ -24,7 +39,7 @@ float get_from_flattened_matrix(int i, int j, int width, float *mx);
  * @param mx
  * @return
  */
-void set_item_flattened_matrix(int i, int j, int width, float *mx, float value);
+void set_item_flattened_matrix(int i, int j, int width, float *mx, float v);
 
 
 // Polynomial
@@ -32,10 +47,11 @@ void set_item_flattened_matrix(int i, int j, int width, float *mx, float value);
 /**
  * Use this function to find coefficients for the X -> Y polynomial regression.
  * @param mx Matrix ixj, being i>0 and j=2
- *
- * @param buffer
+ * @param dgr
+ * @param buffer Needs to be dgr+1 size
+ * @param arr_size
  */
-void find_coefficients(int arr_size, float *mx, int degree, float *buffer);
+void find_coefficients(int arr_size, float *mx, int dgr, float *buffer);
 /**
  * Predict using coefficients and a new x_value
  * Function is something like: F(X) = a0 + a1X + a2*X²
@@ -48,20 +64,20 @@ float predict(int arr_size, const float *coefficients, float x_value);
 /**
  * Specific function to sum and elevate x to inject into augmented matrix.
  * @param x
- * @param size
- * @param degree
+ * @param sz
+ * @param dgr
  * @return
  */
-float elevate_and_sum_all(float *x, int size, int degree);
+float elevate_and_sum_all(float *x, int sz, int dgr);
 /**
  * Specific function to sum y values to inject into augmented matrix.
  * @param y
  * @param x
- * @param size
+ * @param sz
  * @param x_degree
  * @return value of the sum function (E(y*X^n))
  */
-float sum_y(const float y[], const float x[], int size, int x_degree);
+float sum_y(const float y[], const float x[], int sz, int x_degree);
 /**
  * Retrieve x and y from matrix.
  * @param arr_size
@@ -70,14 +86,14 @@ float sum_y(const float y[], const float x[], int size, int x_degree);
  */
 void find_x_y(int arr_size, float *arr, float *inject_matrix);
 /**
- * Private function that calculate the coefficients from x,y and degree.
+ * Private function that calculate the coefficients from x,y and dgr.
  * @param x
  * @param y
- * @param degree
+ * @param dgr
  * @param arr_size
  * @param buffer
  */
-void calculate_coef(float x[], float y[], int degree, int arr_size, float *buffer);
+void calculate_coef(float x[], float y[], int dgr, int arr_size, float *buffer);
 
 
 // Gauss
@@ -103,9 +119,9 @@ void gauss_method_unique_mx(int n, float *mx, float *inject);
  * @param n
  * @param mx_a
  * @param mx_b
- * @param inject_mx
+ * @param buffer
  */
-void join_mx(int n, float *mx_a, float *mx_b, float *inject_mx);
+void join_mx(int n, float *mx_a, float *mx_b, float *buffer);
 /**
  * Transforms matrix into Triangle format.
  * @param n
@@ -123,11 +139,10 @@ void back_subs(int n, float *mx, float *buffer);
 int size = 25;
 int degree = 2;
 float value[25][2];
-float to_pred = 5.7;
-float coef[10];
 
 void setup(){
     Serial.begin(9600); // abre a porta serial a 9600 bps;
+
     value[0][0] = 5.771746026235907;
     value[0][1] = 2756.999505988017;
     value[1][0] = 1.4909464996379098;
@@ -180,7 +195,6 @@ void setup(){
     value[24][1] = 439.9569526627225;
 }
 
-
 void loop() {
     unsigned long StartTime = millis();
     find_coefficients(size, &value[0][0], degree, coef);
@@ -218,29 +232,29 @@ float get_from_flattened_matrix(int i, int j, int width, float *mx){
     return mx[res];
 }
 
-void set_item_flattened_matrix(int i, int j, int width, float *mx, float value){
+void set_item_flattened_matrix(int i, int j, int width, float *mx, float v){
     int res = (i * width) + j;
-    mx[res] = value;
+    mx[res] = v;
 }
 
-// Utils
+// Polynomial Prediction
 
-void find_coefficients(int arr_size, float *mx, int degree, float *buffer) {
+void find_coefficients(int arr_size, float *mx, int dgr, float *buffer) {
     float *x, *y, res[2][arr_size];
     find_x_y(arr_size, mx, &res[0][0]);
     x = res[0];
     y = res[1];
-    calculate_coef(x, y, degree, arr_size, buffer);
+    calculate_coef(x, y, dgr, arr_size, buffer);
 }
 
-void calculate_coef(float x[], float y[], int degree, int arr_size, float *buffer) {
-    int quantity = degree+1, i, ii, elevate_by;
+void calculate_coef(float x[], float y[], int dgr, int arr_size, float *buffer) {
+    int quantity = dgr + 1, i, ii, elevate_by;
     float x_result[quantity][quantity], y_result[1][quantity];
     for (i=0; i<quantity; i++){
         for (ii=0; ii < quantity; ii++){
             elevate_by= i + ii;
-            float value = elevate_and_sum_all(x, arr_size, elevate_by);
-            x_result[i][ii] = value;
+            float v = elevate_and_sum_all(x, arr_size, elevate_by);
+            x_result[i][ii] = v;
         }
         elevate_by = i;
         y_result[0][i] = sum_y(y, x, arr_size, elevate_by);
@@ -259,10 +273,7 @@ float predict(int arr_size, const float *coefficients, float x_value) {
     return res;
 }
 
-/*
- * Example:
- * [ [1,6], [2, 7] ] -> x = [1, 2]; y = [6, 7]
- */
+
 void find_x_y(int arr_size, float *arr, float *inject_matrix){
     int i;
     float x[arr_size], y[arr_size];
@@ -279,9 +290,9 @@ void find_x_y(int arr_size, float *arr, float *inject_matrix){
 }
 
 
-float sum_y(const float y[], const float x[], int size, int x_degree){
+float sum_y(const float y[], const float x[], int sz, int x_degree){
     float res = 0, temp_x, temp_y;
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < sz; ++i) {
         temp_x = x[i];
         temp_y = y[i];
         temp_x = elevate_by(temp_x, x_degree);
@@ -290,11 +301,11 @@ float sum_y(const float y[], const float x[], int size, int x_degree){
     return res;
 }
 
-float elevate_and_sum_all(float *x, int size, int degree){
+float elevate_and_sum_all(float *x, int sz, int dgr){
     float res = 0, temp;
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < sz; ++i) {
         temp = x[i];
-        res += elevate_by(temp, degree);
+        res += elevate_by(temp, dgr);
     }
     return res;
 }
@@ -308,13 +319,13 @@ void gauss_method(int arr_size, float *a, float *b, float *buffer){
     gauss_method_unique_mx(arr_size, &mx[0][0], buffer);
 }
 
-void join_mx(int n, float *mx_a, float *mx_b, float *inject_mx){
+void join_mx(int n, float *mx_a, float *mx_b, float *buffer){
     for (int i = 0; i < n; i++) {
         for (int ii = 0; ii < n+1; ii++) {
             if (ii == n)
-                set_item_flattened_matrix(i, ii, n+1, inject_mx, get_from_flattened_matrix(i, 0, 1, mx_b));
+                set_item_flattened_matrix(i, ii, n+1, buffer, get_from_flattened_matrix(i, 0, 1, mx_b));
             else
-                set_item_flattened_matrix(i, ii, n+1, inject_mx, get_from_flattened_matrix(i, ii, n, mx_a));
+                set_item_flattened_matrix(i, ii, n+1, buffer, get_from_flattened_matrix(i, ii, n, mx_a));
         }
     }
 }
@@ -360,4 +371,3 @@ void back_subs(int n, float *mx, float *buffer){
         buffer[i] = (get_from_flattened_matrix(i, n,n+1, mx) - sum) / get_from_flattened_matrix(i, i, n+1, mx);
     }
 }
-
