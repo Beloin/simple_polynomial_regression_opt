@@ -77,7 +77,7 @@ float elevate_and_sum_all(float *x, int size, int degree);
  * @param x_degree
  * @return value of the sum function (E(y*X^n))
  */
-float sum_y(const float y[], const float x[], int size, int x_degree);
+float sum_y(const float *y, const float *x, int size, int x_degree);
 /**
  * Retrieve x and y from matrix.
  * @param arr_size
@@ -139,6 +139,7 @@ void back_subs(int n, float *mx, float *buffer);
 int size = 10;
 int degree = 2;
 float value[10][2];
+float global_buffer[10][10];
 
 /**
  * Tente colocar um buffer gloabl que pode ser reutilziado por todas as funções que usam buffers locais
@@ -232,10 +233,11 @@ void set_item_flattened_matrix(int i, int j, int width, float *mx, float value){
 // Polynomial Prediction
 
 void find_coefficients(int arr_size, float *mx, int degree, float *buffer) {
-    float *x, *y, res[2][arr_size];
-    find_x_y(arr_size, mx, &res[0][0]);
-    x = res[0];
-    y = res[1];
+    float *x, *y;
+    // ! Used global buffer instead of res[2][arr_size];
+    find_x_y(arr_size, mx, &global_buffer[0][0]);
+    x = global_buffer[0];
+    y = global_buffer[1];
     calculate_coef(x, y, degree, arr_size, buffer);
 }
 
@@ -271,21 +273,26 @@ float predict(int arr_size, const float *coefficients, float x_value) {
  */
 void find_x_y(int arr_size, float *arr, float *inject_matrix){
     int i;
+
+    // ! Using buffer instead of float x[arr_size], y[arr_size];
     float x[arr_size], y[arr_size];
     for (i = 0; i < arr_size; i++){
         float get1 = get_from_flattened_matrix(i, 0, 2, arr);
-        x[i] = get1;
+//        x[i] = get1;
+        set_item_flattened_matrix(0, i, arr_size, inject_matrix, get1);
         float get2 = get_from_flattened_matrix(i, 1, 2, arr);
-        y[i] = get2;
+        set_item_flattened_matrix(1, i, arr_size, inject_matrix, get2);
+//        y[i] = get2;
     }
-    for (int j = 0; j < arr_size; ++j) {
-        set_item_flattened_matrix(0, j, arr_size, inject_matrix, x[j]);
-        set_item_flattened_matrix(1, j, arr_size, inject_matrix, y[j]);
-    }
+    // Called in before, making faster
+//    for (int j = 0; j < arr_size; ++j) {
+//        set_item_flattened_matrix(0, j, arr_size, inject_matrix, x[j]);
+//        set_item_flattened_matrix(1, j, arr_size, inject_matrix, y[j]);
+//    }
 }
 
 
-float sum_y(const float y[], const float x[], int size, int x_degree){
+float sum_y(const float *y, const float *x, int size, int x_degree){
     float res = 0, temp_x, temp_y;
     for (int i = 0; i < size; ++i) {
         temp_x = x[i];
@@ -309,9 +316,9 @@ float elevate_and_sum_all(float *x, int size, int degree){
 // Gauss
 
 void gauss_method(int arr_size, float *a, float *b, float *buffer){
-    float mx[arr_size][arr_size+1];
-    join_mx(arr_size, a, b, &mx[0][0]);
-    gauss_method_unique_mx(arr_size, &mx[0][0], buffer);
+//    Using Global buffer instead of float mx[arr_size][arr_size+1];
+    join_mx(arr_size, a, b, &global_buffer[0][0]);
+    gauss_method_unique_mx(arr_size, &global_buffer[0][0], buffer);
 }
 
 void join_mx(int n, float *mx_a, float *mx_b, float *buffer){
