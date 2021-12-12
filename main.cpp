@@ -1,4 +1,6 @@
 #include <iostream>
+#include <chrono>
+using namespace std::chrono;
 
 // Utils
 
@@ -175,13 +177,22 @@ int main() {
     std::cout << to_predict;
     std::cout << "\n";
 
+    auto start = high_resolution_clock::now();
+
     // Using in global buffer -> float coef[3];
     find_coefficients(size, &value[0][0], degree, coef);
     float prediction = predict(size, &coef[0], to_predict);
+    auto stop = high_resolution_clock::now();
+
 
     std::cout << "Predicted value are: ";
     std::cout << prediction;
 
+    auto duration = duration_cast<microseconds>(stop - start);
+
+    std::cout << std::endl;
+    std::cout << "Duration of methods: ";
+    std::cout << duration.count() << " microseconds" << std::endl;
     return 0;
 }
 
