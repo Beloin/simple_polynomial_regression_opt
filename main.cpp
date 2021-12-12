@@ -138,8 +138,15 @@ void back_subs(int n, float *mx, float *buffer);
 
 int size = 10;
 int degree = 2;
+float to_predict =  5.7;
+// length == size
 float value[10][2];
+// length == size
 float global_buffer[10][10];
+// length == degree + 1
+float x_result[3][3], y_result[1][3];
+// length == degree + 1
+float coef[3];
 
 /**
  * Tente colocar um buffer gloabl que pode ser reutilziado por todas as funções que usam buffers locais
@@ -171,12 +178,12 @@ int main() {
 
     std::cout << "Running Code\n";
     std::cout << "Value to Predict: ";
-    std::cout << 5.7;
+    std::cout << to_predict;
     std::cout << "\n";
 
-    float coef[degree+1];
+    // Using in global buffer -> float coef[3];
     find_coefficients(size, &value[0][0], degree, coef);
-    float prediction = predict(size, &coef[0], 5.7);
+    float prediction = predict(size, &coef[0], to_predict);
 
     std::cout << "Predicted value are: ";
     std::cout << prediction;
@@ -243,7 +250,7 @@ void find_coefficients(int arr_size, float *mx, int degree, float *buffer) {
 
 void calculate_coef(float x[], float y[], int degree, int arr_size, float *buffer) {
     int quantity = degree+1, i, ii, elevate_by;
-    float x_result[quantity][quantity], y_result[1][quantity];
+    // Removed from here to put on global scope -> float x_result[quantity][quantity], y_result[1][quantity];
     for (i=0; i<quantity; i++){
         for (ii=0; ii < quantity; ii++){
             elevate_by= i + ii;
@@ -275,7 +282,7 @@ void find_x_y(int arr_size, float *arr, float *inject_matrix){
     int i;
 
     // ! Using buffer instead of float x[arr_size], y[arr_size];
-    float x[arr_size], y[arr_size];
+//    float x[arr_size], y[arr_size];
     for (i = 0; i < arr_size; i++){
         float get1 = get_from_flattened_matrix(i, 0, 2, arr);
 //        x[i] = get1;
