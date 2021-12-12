@@ -768,10 +768,9 @@ void find_x_y(int arr_size, float *arr, float *inject_matrix){
     int i;
     // ! Using buffer instead of float x[arr_size], y[arr_size];
     for (i = 0; i < arr_size; i++){
-        float get1 = get_from_flattened_matrix(i, 0, 2, arr);
-        set_item_flattened_matrix(0, i, arr_size, inject_matrix, get1);
-        float get2 = get_from_flattened_matrix(i, 1, 2, arr);
-        set_item_flattened_matrix(1, i, arr_size, inject_matrix, get2);
+        // Removed twp float items to reuse space
+        set_item_flattened_matrix(0, i, arr_size, inject_matrix, get_from_flattened_matrix(i, 0, 2, arr));
+        set_item_flattened_matrix(1, i, arr_size, inject_matrix, get_from_flattened_matrix(i, 1, 2, arr));
     }
     // Called before, making faster
 //    for (int j = 0; j < arr_size; ++j) {
