@@ -1,5 +1,3 @@
-#include <iostream>
-
 // Utils
 
 /**
@@ -138,7 +136,15 @@ void back_subs(int n, float *mx, float *buffer);
 
 int size = 25;
 int degree = 2;
+float to_predict =  5.7;
+// length == size
 float value[25][2];
+// length == size
+float global_buffer[2][25];
+// length == degree + 1
+float x_result[3][3], y_result[1][3];
+// length == degree + 1
+float coef[3];
 
 void setup(){
     Serial.begin(9600); // abre a porta serial a 9600 bps;
@@ -198,7 +204,7 @@ void setup(){
 void loop() {
     unsigned long StartTime = millis();
     find_coefficients(size, &value[0][0], degree, coef);
-    float prediction = predict(degree+1, coef, to_pred);
+    float prediction = predict(degree+1, coef, to_predict);
 
     unsigned long CurrentTime = millis();
     unsigned long ElapsedTime = CurrentTime - StartTime;
